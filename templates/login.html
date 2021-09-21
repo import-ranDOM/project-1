@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MYSITE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 style="text-align:center; margin-bottom: 27px; margin-top: 37px;">Mysite</h1>
+
+      <div class="container card">
+        <form method="POST">
+            {% csrf_token %}
+            <h2 class="mb-4" style="text-align: center;">Login</h1>
+            <div class="form-group" style="font-size: 15px; color: black;">
+              <label><b>UserName:&nbsp; &nbsp; &nbsp; </b></label>
+              {{ form.username }}
+            </div>
+            <br>
+            <div class="form-group" style="font-size: 15px; color: black;">
+              <label><b>Password:&nbsp; &nbsp; &nbsp; </b></label>
+              {{ form.password }}
+            </div>
+            <br>
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-info btn-lg" style="text-align: center;"><b style="font-size: 15px; padding-bottom: 2px;">Login</b></button>
+              <p style="text-align:center; margin-top:10px;">Don't have an account? <a href="/signup"><b>Sign Up!</b></a></p>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </body>
+</html>
